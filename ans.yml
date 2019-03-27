@@ -1,9 +1,36 @@
- - hosts: ubuntu
-   tasks:
+- hosts: ubuntu
 
-           - name: install apache2
-             apt: name=apache2 state=latest
-             notify:
+  tasks:
+          - name: install apache2
+            apt: name=apache2 state=latest
+            notify:
+                    - start apache2
 
-             - start apache2
 
+
+                    - hosts: ubuntu
+                      tasks:
+                              - name: install packages
+                                raw: apt-get update
+                                when: ansible_distribution='ubuntu'
+
+                              - hosts: all
+                                remote_user: root
+                                tasks:
+                                        - name: install httpd
+                                          raw: apt-get install httpd
+                                          when: ansible_distribution='centos'
+
+
+                                        - hosts: all
+                                          remote_user: root
+                                          tasks:
+                                                  - name: install maven
+                                                    raw: yum install -y maven
+                                                    when: ansible_distribution='centos'
+
+                                                  - name: to deploy the file
+                                                    copy:
+                                                            src: /var/index.html
+                                                            test: /var/www/html/index.html
+                                     

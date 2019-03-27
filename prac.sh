@@ -1,25 +1,24 @@
-echo "enter a file name:\c"
+echo  "enter a character:\c"
 
-cat result
+read vehicle 
 
-w
+case $vehicle in
 
-wc -l result
-
-wc -c result
-
-wc -w create-env.sh
-
-ps
-
-top
-
-head create-env.sh
-
-tail create-env.sh
-
-cat /proc/meminfo
-
-cat /proc/cpuinfo
+	[car])
+		echo "car cost i"
+		;;
+	[van])
+		echo "van cost is"
+		;;
+	[bus])
+		echo "bus cost is"
+		;;
+	?)
+		echo "nothing is there"
+		;;
+	*)
+		echo "all"
+		;;
+esac
 
 
