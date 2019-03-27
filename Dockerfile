@@ -1,10 +1,11 @@
-FROM tomcat:7.0
-COPY target/shell.war /usr/local/tomcat/webapps
-ENTRYPOINT /usr/local/tomcat/bin/startup.sh && bash
 
-FROM ubuntu
-RUN apt-get update
-RUN apt-get install -y nginx
-COPY result /usr/local/nginx/html
-ENTRYPOINT service nginx start && bash
-EXPOSE 80
+FROM jenkins
+USER root 
+ENV JAVA_OPTS="-Xmx4096m"
+ENV JENKINS_OPTS=" --handlerCountMax=200"
+run mkdir /var/log/jenkins-log
+EXPOSE 8080
+
+
+
+

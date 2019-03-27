@@ -1,21 +1,25 @@
-echo "enter a filename:\c"
-a=1
-while  [ $a -le 3 ]
-do
-	b=1
-	while [ $b -le 3 ]
-	do
-		c=1
-		while [ $c -le 3 ]
-		do
-			echo $a$b$c
+echo "enter a file name:\c"
 
-			echo $c
-			c=`expr $c + 1`
-		done
-		echo $b
-		b=`expr $b + 1`
-	done
-	echo $a
-	a=`expr $a + 1`
-done
+cat result
+
+w
+
+wc -l result
+
+wc -c result
+
+wc -w create-env.sh
+
+ps
+
+top
+
+head create-env.sh
+
+tail create-env.sh
+
+cat /proc/meminfo
+
+cat /proc/cpuinfo
+
+
