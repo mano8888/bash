@@ -1,0 +1,14 @@
+- hosts: all
+  tasks:
+- name: install apache2
+  apt: name=apache2 state=latest
+  notify:
+- start apache2
+
+- hosts: all
+  remote_user: root
+  tasks:
+  - name: install httpd
+    apt: name=httpd state=latest
+    when: ansible_distribution="centos"
+
