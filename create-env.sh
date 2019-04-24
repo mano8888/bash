@@ -7,7 +7,7 @@ do
 	echo "=============================="
     echo "Creating www.shell$i container.."
     sleep 1
-   sudo docker run --name www.shell$i -d -it --rm mano8888/mydoc /bin/bash
+   sudo docker run --name www.shell$i -d -it --rm mano8888/newdoc /bin/bash
     echo "www.shell$i container has been created!"
 	echo "=============================="
 done
