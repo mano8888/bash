@@ -1,0 +1,15 @@
+#!/bin/bash
+cont=$1
+echo "creating $cont containers"
+sleep2;
+
+for i in `seq $cont`
+do
+echo "creting www.cont$i containers"
+sudo docker run -it www.cont$i--name mano8888/mydoc /bin/bash
+sleep1;
+
+echo "www.cont$i containers has been created"
+done
+
+
