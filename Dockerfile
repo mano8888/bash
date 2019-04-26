@@ -1,5 +1,5 @@
 FROM ubuntu
-COPY target/shell.war /usr/local/tomcat/webapps
+COPY target/gamutkart2.war /usr/local/tomcat/webapps
 ENTRYPOINT /usr/local/tomcat/bin/stratup.sh && bash
 
 FROM ubuntu
