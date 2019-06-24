@@ -1,17 +1,17 @@
-FROM tomcat
-COPY target/some.war /usr/local/tomcat/webapps
+FROM ubuntu
+COPY target/file.war /usr/local/tomcat/webapps
 ENTRYPOINT /usr/local/tomcat/bin/startup.sh && bash
 
 FROM nginx
 RUN apt-get update
-RUN apt-get install nginx
-COPY create-env.sh /usr/local/nginx/html
+RUN apt-get install -y nginx
+COPY file /usr/local/nginx/html
 ENTRYPOINT service nginx start && bash
 EXPOSE 80
 
 FROM jenkins
-USER root 
+USER root
 ENV JAVA_OPTS=" -Xmx4096m"
-ENV JENKINS_OPTS=" --handlerCounterMax=200"
-RUN mkdir /var/log/jenkins-log
+ENV JENKINS_OPTS=" --handlerCountMax=200"
+RUN MKDIR /var/log/jenkins-log
 EXPOSE 8080

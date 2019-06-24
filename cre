@@ -1,13 +1,13 @@
-count=$1
-echo "creating $count containers"
+manoj=$1
+echo "creating $manoj containers"
 sleep 2;
 
-for i in `seq $count`
+for i in `seq $manoj`
 do
-echo "==============="
-echo "creating www.some$i containers"
+echo "=============="
+echo "creating www.file$i containers ready to create a container"
 sleep 1
-sudo docker run -it --name www.some$i mano8888/newdoc /bin/bash
-echo "www.some$i containers are created"
-echo "==============="
+sudo docker run -it --name www.file$i mano8888/mydoc /bin/bash
+echo "done www.file$i files has to been created for creating containers"
+echo "=============================="
 done

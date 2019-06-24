@@ -1,27 +1,21 @@
-resource-types:
-
-      - name: pull-request
-        type: docker-image
+Resource_types:
+ -name: pull_request
+  type: docker_image
   
-        repository: mano8888/mydoc
-      
-      - name: docker-build
-        type: docker-image
+ source:
+    repository: mano8888/mydco
 
-
-       source:
-       repository: https://docker-hub/mano8888/mydoc
-       checkout=every 1min
-       
-resource-type: 
-   - name: docker-Image
-     type: details
-     
-      source: 
+  -name: docker-image
+   type: pull-request
+resource_type:
+   
+ -name: docker-hub
+  type: docekr_image
+ source: 
+      details: 
       - name: mano8888
-        type: manu@1406
-      webhook: some token
+        passwd: manu@1406
+resource_type:
+ - name: git_hub
+   type: pull_request
 
-     - name: https://kdmfdfm/ggtihub.com/
-       type:sdbmslfb
-           
